@@ -99,8 +99,13 @@ mv oscam-1.20_svn11505-791-x86_64-linux-gnu-ssl ./oscam
 sudo cp ./oscam /usr/local/bin/oscam
 ```
 
-### Create a directory in: /home/jordy/.oscam and insert the following files:
+###Create Directory: 
 
+```
+/home/jordy/.oscam/tmp
+```
+
+### Create a directory in: /home/jordy/.oscam and insert the following files:
 oscam.conf
 ```
 # oscam.conf generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r11392
@@ -217,7 +222,7 @@ Insert the following code
 
 DAEMON=/usr/local/bin/oscam
 PIDFILE=/var/run/oscam.pid
-DAEMON_OPTS="-p 4096 -r 2 -B ${PIDFILE} -c /home/jordy/.oscam -t /tmp/.oscam"
+DAEMON_OPTS="-p 4096 -r 2 -B ${PIDFILE} -c /home/jordy/.oscam -t /home/jordy/.oscam/tmp"
 
 test -x ${DAEMON} || exit 0
 
