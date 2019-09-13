@@ -76,27 +76,30 @@ pipe:///usr/bin/ffmpeg -loglevel fatal -re -i http://localhost:9981/stream/chann
 
 It'll scan in a new service and you just map that to a new channel.  
 
-Compile/Install OSCAM-EMU
+### Compile/Install OSCAM-EMU
+
 ```
 mkdir oscam
 cd oscam
 git clone https://github.com/oscam-emu/oscam-patched
 cd oscam-patched
 git checkout oscam11505-emu791
-
 ```
+
 Select all protocols and all options
 ```
 make config
 ```
-Compile oscam
+
+### Compile oscam
 ```
 make
 cd Distribution
 mv oscam-1.20_svn11505-791-x86_64-linux-gnu-ssl ./oscam
 sudo cp ./oscam /usr/local/bin/oscam
 ```
-Create a directory in: /home/jordy/.oscam and insert the following files:
+
+### Create a directory in: /home/jordy/.oscam and insert the following files:
 
 oscam.conf
 ```
