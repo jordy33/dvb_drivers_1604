@@ -1,15 +1,45 @@
 ## How to install tvheadend in ubuntu
 
 ### Install Tvheadend
-```
-sudo apt-get -y install coreutils wget apt-transport-https lsb-release ca-certificates
-sudo wget -qO- https://doozer.io/keys/tvheadend/tvheadend/pgp | sudo apt-key add -
-sudo sh -c 'echo "deb https://apt.tvheadend.org/stable $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/tvheadend.list'
 
-sudo apt-get update
-sudo apt-get install tvheadend
+Dependencies
+
+```
+sudo apt-get install gitk
+sudo apt-get install libiconv
+sudo apt-get install libic6
+sudo apt-get install libc6
+sudo apt-get install libiconv-dev
+sudo apt-get install libc6-dev
+sudo apt-get install clang
+sudo apt-get install libdvbcsa-dev
+sudo apt-get install dvb-apps
+git clone https://github.com/tvheadend/dtv-scan-tables.git
+cd dtv-scan-tables/
+make clean
+sudo make dvbv3
+sudo make install
+
+git clone https://github.com/tvheadend/tvheadend.git
+gitk --all
+git checkout 9874ab0b1d4a6752840a9a23bf7502c3e623825f
 ```
 
+### Configure Options
+```
+ ./configure --enable-dvbcsa --enable-constcw  --enable-bundle
+```
+
+### Compile
+```
+make
+```
+
+### Test
+
+```
+./build.linux/tvheadend
+```
 ### Install Kodi
 ```
 sudo apt-get install software-properties-common
