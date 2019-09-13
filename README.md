@@ -99,7 +99,7 @@ mv oscam-1.20_svn11505-791-x86_64-linux-gnu-ssl ./oscam
 sudo cp ./oscam /usr/local/bin/oscam
 ```
 
-###Create Directory: 
+### Create Directory: 
 
 ```
 /home/jordy/.oscam/tmp
