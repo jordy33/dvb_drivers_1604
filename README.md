@@ -30,6 +30,11 @@ git checkout 9874ab0b1d4a6752840a9a23bf7502c3e623825f
  ./configure --enable-dvbcsa --enable-constcw  --enable-bundle
 ```
 
+### Package
+```
+AUTOBUILD_CONFIGURE_EXTRA="--enable-dvbcsa --enable-constcw  --enable-bundle" ./Autobuild.sh -t xenial-amd64
+```
+
 ### Compile
 ```
 make
