@@ -1,7 +1,34 @@
 ## How to install tvheadend in ubuntu
 
 ### Install Tvheadend
+Update
+```
+apt-get update
+apt-get upgrade
+```
+###Language
+```
+First run locale to list what locales currently defined for the current user account:
 
+$ locale
+
+Then generate the missing locale and reconfigure locales to take notice:
+
+$ sudo locale-gen "en_US.UTF-8"
+Generating locales...
+  en_US.UTF-8... done
+Generation complete.
+
+$ sudo dpkg-reconfigure locales
+Generating locales...
+  en_US.UTF-8... up-to-date
+Generation complete.
+
+Nothing suggested above worked in my case (Ubuntu Server 12.04LTS). What finally helped was putting to the file /etc/environment:
+
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+```
 Dependencies
 
 ```
