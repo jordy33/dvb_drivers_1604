@@ -92,16 +92,12 @@ sudo apt-get install ffmpeg
 ffmpeg -version
 ```
 
-In Kodi, create a user * with password * 
-Provide all streaimg access
-
-
+In Kodi, input user admin and password 
+Or in TVH change in General/Base/Authentication type= Plain Insecure:
 In tvh add an IPTV network (no automatic).  Add a mux for that network and use a URL like this....
 
-For version 2.8.15
-
 ```
-pipe:///usr/bin/ffmpeg -loglevel fatal -re -i http://localhost:9981/stream/channel/6a86ca950c6198ef2c992d4437955e18?ticket=A36A476830B5BFA62BCD75C7B6B5893512ED567 -c:v copy -filter_complex [0:1][0:2][0:3]amerge=inputs=3,pan=5.1|FL=c0|FR=c1|FC=c2|LFE=c3|BL=c4|BR=c5 -c:a eac3 -f mpegts pipe:1
+pipe:///usr/bin/ffmpeg -loglevel fatal -re -i http://admin:trinity@192.168.1.79:9981/stream/channel/add03d46c01d987cf950098e621256b1?ticket=817e1591bb28cac007edcacdb100fb24628c25bb -c:v copy -filter_complex [0:1][0:2][0:3]amerge=inputs=3,pan=5.1|FL=c0|FR=c1|FC=c2|LFE=c3|BL=c4|BR=c5 -c:a eac3 -f mpegts pipe:1
 ```
 
 (Get the http link openning the link to open the channel)
